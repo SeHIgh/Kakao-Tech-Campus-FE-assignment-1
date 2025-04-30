@@ -1,0 +1,278 @@
+/* Bagel Fat One & Jua 폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Jua&display=swap");
+
+/* CSS Style 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: nowrap;
+}
+ol,
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+input {
+    border: none;
+    outline: none;
+    background: none;
+}
+*{
+    color: inherit;
+}
+
+/* CSS Style Custom */
+
+/* 폰트 - 메인 로고 or 강조 - Bagel Fat One */
+.bagel-fat-one-regular {
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+/* 폰트 지정 - 메인 폰트 - Jua */
+.jua-regular {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: #6a89cc;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* 헤더 */
+header {
+    width: 100%;
+    height: fit-content;
+    /* padding: 6px 10px; */
+    background-color: transparent;
+    text-align: center;
+    border-bottom: 2px solid #6a89cc;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 헤더 탑 - 로고, 검색 창, 로그인 및 회원가입 */
+.header_top {
+    width: 100%;
+    padding: 6px 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 로고 */
+.header_logo a {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6a89cc;
+}
+
+/* 검색 창 */
+.header_top .search_box {
+    width: 30%;
+    min-width: 300px;
+    height: 36px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+/* 검색 창 - 입력란 */
+.header_top .search_box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+
+    font-size: 16px;
+
+    border: 2px solid #6a89cc;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+.header_top .search_box input:focus {
+    border: 2px solid #7090d7;
+    background-color: white;
+}
+
+/* 검색 창 - 검색 버튼 */
+.header_top .search_box button {
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 검색 창 - 검색 버튼 - 아이콘 */
+.header_top .search_box button .search_icon {
+    transition: all 0.3s ease;
+}
+.header_top .search_box button:hover .search_icon {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* 로그인 및 회원가입 */
+.header_top .auth_box {
+    width: 240px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+.header_top .auth_box a {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 헤더 메뉴 */
+.header_menu {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #6a89cc;
+}
+
+.header_menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.header_menu ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+.header_menu ul .active a {
+    color: #f4f4f4;
+    transform: scale(1.1);
+}
+.header_menu ul li a {
+    height: 100%;
+    color: lightgray;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.header_menu ul li:hover {
+    transform: scale(1.1);
+}
+.header_menu ul li:hover a {
+    color: #f4f4f4;
+}
+
+main {
+    padding: 20px;
+}
+
+/* #slide-box{
+    width: 100%;
+    height: 400px;
+    background-color: #6a89cc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    aspect-ratio: 4/5;
+    height: 200px;
+} */
+
+#slide-box {
+    aspect-ratio: 4/5;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.slide-container {
+    display: flex;
+    transition: transform 0.5s;
+    width: 4000px; /* 10개 x 400px */
+}
+
+#slide-box button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+#prevBtn {
+    left: 0;
+}
+#nextBtn {
+    right: 0;
+}
+
+.card {
+    aspect-ratio: 4/5;
+    height: 200px;
+}
+
+footer {
+    background-color: #6a89cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer {
+    background-color: #6a89cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

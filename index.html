@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Milky Movie</title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="module" src="main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="header_top">
+                <div class="header_logo">
+                    <a href="#">MiLKY MOViE</a>
+                </div>
+
+                <form role="search" class="search_box">
+                    <input
+                        type="search"
+                        placeholder="궁금한 영화가 있으신가요?"
+                        aria-label="Search"
+                    />
+                    <button type="submit">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
+                            alt="search"
+                            width="20"
+                            height="20"
+                            class="search_icon"
+                        />
+                    </button>
+                </form>
+
+                <div class="auth_box">
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                </div>
+            </div>
+
+            <div class="header_menu">
+                <ul>
+                    <li class="active">
+                        <a href="#">홈</a>
+                    </li>
+                    <li>
+                        <a href="#">TOP 100</a>
+                    </li>
+                    <li>
+                        <a href="#">개봉 예정</a>
+                    </li>
+                    <li>
+                        <a href="#">나의 영화</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <!-- 인기영화 top5 - 슬라이드 -->
+            <div class="popular-movie" id="slide-box">
+                <button id="prevBtn">이전</button>
+                <div class="slide-container" id="slides"></div>
+                <button id="nextBtn">다음</button>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 Milky Movie. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
