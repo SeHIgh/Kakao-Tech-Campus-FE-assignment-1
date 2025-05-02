@@ -1,3 +1,4 @@
-export const formattedDate = (date) => {
-    return new Date(date).toLocaleDateString("ko-KR");
+export const formattedDate = (dateString) => {
+    const date = new Date(dateString);
+    return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
 };

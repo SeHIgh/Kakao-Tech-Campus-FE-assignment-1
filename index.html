@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Milky Movie</title>
+        <title>MiLKY MOViE</title>
         <link rel="stylesheet" href="style.css" />
         <script type="module" src="main.js" defer></script>
     </head>
@@ -23,32 +23,17 @@
                             <a href="#">홈</a>
                         </li>
                         <li>
-                            <a href="#">나의 영화</a>
+                            <a href="#trends-movie">인기 영화</a>
+                        </li>
+                        <li>
+                            <a href="#my-movie">나의 영화</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="header_right">
-                <!-- <form role="search" class="search_box">
-                    <input
-                        type="search"
-                        placeholder="궁금한 영화가 있으신가요?"
-                        aria-label="Search"
-                    />
-                    <button type="submit">
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
-                            alt="search"
-                            width="20"
-                            height="20"
-                            class="search_icon"
-                        />
-                    </button>
-                </form> -->
-
                 <div class="auth_box">
                     <a href="#">로그인/가입</a>
-                    <!-- <a href="#">회원가입</a> -->
                 </div>
             </div>
         </header>
@@ -72,17 +57,23 @@
                 </form>
                 <div class="search-result"></div>
             </div>
-            <h1 class="trends-movie-title">
+            <h1 id="trends-movie" class="trends-movie-title">
                 인기 영화 -
                 <span class="bagel-fat-one-regular" style="font-size: 2rem"
                     >DAiLY</span
                 >
             </h1>
-            <!-- 인기영화 top5 - 슬라이드 -->
+            <!-- 인기영화 슬라이드 -->
             <div class="trends-movie" id="slide-box">
                 <button id="prevBtn">이전</button>
                 <div class="slide-container" id="slides"></div>
                 <button id="nextBtn">다음</button>
+            </div>
+
+            <!-- 나의 영화 - 북마크 영화 슬라이드 -->
+            <h2 id="my-movie" class="my-movie-title">나의 북마크 영화</h2>
+            <div class="my-movie-container">
+                <div class="bookmark-grid"></div>
             </div>
         </main>
         <footer>

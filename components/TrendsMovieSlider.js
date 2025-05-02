@@ -1,8 +1,7 @@
 import { fetchTrendsMovies } from "../api/tmdbApi.js";
 import { formattedDate } from "../utils/Format.js";
-import { showModal } from "./MovieDetailModal.js";
+import { showMovieModal } from "./MovieDetailModal.js";
 
-// UI 렌더링 함수 분리
 function renderSlider({ target, movies, cardsPerSlide, slideWidth }) {
     target.innerHTML = `
         <div class="slide-container" id="slides"></div>
@@ -42,7 +41,7 @@ function renderSlider({ target, movies, cardsPerSlide, slideWidth }) {
                                 <h5 class="card-title">${movie.title}</h5>
                                 <h5 class="card-rating">⭐ ${parseFloat(
                                     movie.vote_average
-                                ).toFixed(2)}</h5>
+                                ).toFixed(1)}</h5>
                             </div>
                             <div class="card-footer">
                                 <p class="card-date"><span class="card-span">개봉일</span> ${formattedDate(
@@ -51,7 +50,7 @@ function renderSlider({ target, movies, cardsPerSlide, slideWidth }) {
                                 <p class="card-desc"><span class="card-span">요약</span> ${
                                     movie.overview
                                         ? movie.overview
-                                        : "없어요 ㅠㅠ"
+                                        : "줄거리가 없습니다."
                                 }</p>
                             </div>
                         </div>
@@ -93,18 +92,17 @@ function attachEvents({
     target,
     movies,
     cardsPerSlide,
-    slideWidth,
+    // slideWidth,
     getCurrentIndex,
     setCurrentIndex,
     moveSlideFn,
 }) {
     target.addEventListener("click", (e) => {
-        // 카드 클릭 시 모달 오픈 및 a 태그 기본 동작 방지
         const card = e.target.closest(".card");
         if (card) {
             e.preventDefault();
             const movieId = card.getAttribute("data-movie-id");
-            showModal(movieId);
+            showMovieModal(movieId);
             return;
         }
         // 이전 버튼

@@ -12,7 +12,7 @@ const OPTIONS = {
 const BASE_URL = "https://api.themoviedb.org/3";
 const LANGUAGE = "ko-KR";
 
-// 영화 트렌드 목록 요청 API
+// 인기 영화 목록 요청 API
 export async function fetchTrendsMovies() {
     try {
         const url = `${BASE_URL}/trending/movie/day?language=${LANGUAGE}`;
@@ -47,10 +47,12 @@ export async function fetchMovieDetail(movieId) {
 
 // 영화 검색 API
 export async function searchMovies(query, page = 1) {
-    try{
-        const url = `${BASE_URL}/search/movie?language=${LANGUAGE}&query=${encodeURIComponent(query)}&page=${page}`;
+    try {
+        const url = `${BASE_URL}/search/movie?language=${LANGUAGE}&query=${encodeURIComponent(
+            query
+        )}&page=${page}`;
         const response = await fetch(url, OPTIONS);
-        if (!response.ok) throw new Error('영화 검색 실패');
+        if (!response.ok) throw new Error("영화 검색 실패");
         return await response.json();
     } catch (error) {
         console.error("Error searching movies:", error);
