@@ -44,3 +44,16 @@ export async function fetchMovieDetail(movieId) {
         return null;
     }
 }
+
+// 영화 검색 API
+export async function searchMovies(query, page = 1) {
+    try{
+        const url = `${BASE_URL}/search/movie?language=${LANGUAGE}&query=${encodeURIComponent(query)}&page=${page}`;
+        const response = await fetch(url, OPTIONS);
+        if (!response.ok) throw new Error('영화 검색 실패');
+        return await response.json();
+    } catch (error) {
+        console.error("Error searching movies:", error);
+        return { results: [] };
+    }
+}

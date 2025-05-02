@@ -79,7 +79,7 @@ function updateIndicators(target, currentIndex) {
     const indicators = target.querySelectorAll(".indicator");
     indicators.forEach((indicator, idx) => {
         if (idx === currentIndex) {
-            indicator.style.backgroundColor = "#f4f4f4";
+            indicator.style.backgroundColor = "#6a89cc";
             indicator.style.transform = "scale(1.3)";
         } else {
             indicator.style.backgroundColor = "lightgray";

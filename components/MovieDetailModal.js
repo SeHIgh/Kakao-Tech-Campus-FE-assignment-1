@@ -39,7 +39,11 @@ function renderModal({ movie, onClose }) {
             <img src="https://image.tmdb.org/t/p/w400${
                 poster_path || ""
             }" alt="${title}">
-            <a href="${homepage}" target="_blank" class="modal-link"><span>절찬 스트리밍 중</span></br>보러가기</a>        
+            ${
+                homepage
+                    ? `<a href="${homepage}" target="_blank" class="modal-link"><span>절찬 스트리밍 중</span></br>보러가기</a>`
+                    : ""
+            }        
         </div>
         <div class="modal-content">
             <h2 class="modal-title">${title}</h2>
@@ -52,7 +56,7 @@ function renderModal({ movie, onClose }) {
             <p class="modal-runtime">상영시간: ${runtime}분</p>
             <p class="modal-genres">장르: ${genreStr}</p>
             <p class="modal-production">제작사: ${companyStr}</p>
-            <p class="modal-overview">${overview || "없어요 ㅠㅠ"}</p>
+            <p class="modal-overview">${overview || "요약 내용이 없습니다."}</p>
         </div>
     `;
 

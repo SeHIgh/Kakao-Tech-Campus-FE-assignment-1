@@ -67,44 +67,96 @@ a:hover {
 
 body {
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* 헤더 */
 header {
     width: 100%;
     height: fit-content;
-    /* padding: 6px 10px; */
+    padding: 10px 20px;
     background-color: transparent;
     text-align: center;
     border-bottom: 2px solid #6a89cc;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* 헤더 탑 - 로고, 검색 창, 로그인 및 회원가입 */
-.header_top {
-    width: 100%;
-    padding: 6px 10px;
-
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 4px;
+    gap: 20px;
+}
+/* 반응형 헤더 */
+/* @media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .header_left,
+    .header_right {
+        width: 100%;
+        justify-content: center;
+    }
+    .header_logo a {
+        font-size: 1.5rem;
+    }
+    .search_box {
+        width: 100%;
+        min-width: 0;
+    }
+} */
+
+.header_left,
+.header_right {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.header_left {
+    justify-content: start;
+}
+.header_right {
+    justify-content: end;
 }
 
 /* 로고 */
+.header_logo {
+    border-right: 2px solid #6a89cc;
+    padding-right: 20px;
+}
 .header_logo a {
-    font-size: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logo_title {
+    font-size: 2rem;
     font-weight: bold;
+    line-height: 2rem;
     color: #6a89cc;
 }
 
 /* 검색 창 */
-.header_top .search_box {
+.search_box_container{
+    width: 100%;
+    background-color: #6a89cc;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    margin-bottom: 40px;
+}
+
+.search_box {
     width: 30%;
     min-width: 300px;
     height: 36px;
@@ -115,25 +167,26 @@ header {
     gap: 10px;
 }
 /* 검색 창 - 입력란 */
-.header_top .search_box input {
+.search_box input {
     width: 100%;
     height: 100%;
     padding: 0 10px;
 
     font-size: 16px;
 
-    border: 2px solid #6a89cc;
+    background-color: #f4f4f4;
+    border: 2px solid #f4f4f4;
     border-radius: 10px;
 
     transition: all 0.3s ease;
 }
-.header_top .search_box input:focus {
+.search_box input:focus {
     border: 2px solid #7090d7;
     background-color: white;
 }
 
 /* 검색 창 - 검색 버튼 */
-.header_top .search_box button {
+.search_box button {
     height: 100%;
     width: auto;
 
@@ -142,34 +195,36 @@ header {
     align-items: center;
 }
 /* 검색 창 - 검색 버튼 - 아이콘 */
-.header_top .search_box button .search_icon {
+.search_box button .search_icon {
     transition: all 0.3s ease;
 }
-.header_top .search_box button:hover .search_icon {
+.search_box button:hover .search_icon {
     transform: scale(1.2);
     opacity: 0.8;
 }
 
 /* 로그인 및 회원가입 */
-.header_top .auth_box {
-    width: 240px;
+.auth_box {
     display: flex;
     flex-direction: row;
     justify-content: end;
     align-items: center;
     gap: 20px;
+
+    border-left: 2px solid #6a89cc;
+    padding-left: 20px;
 }
-.header_top .auth_box a {
+.auth_box a {
     font-size: 18px;
     font-weight: 500;
+    color: lightslategray;
+}
+.auth_box a:hover {
+    color: #6a89cc;
+    transform: scale(1.1);
 }
 
 /* 헤더 메뉴 */
-.header_menu {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #6a89cc;
-}
 
 .header_menu ul {
     display: flex;
@@ -187,12 +242,12 @@ header {
     transition: all 0.3s ease;
 }
 .header_menu ul .active a {
-    color: #f4f4f4;
+    color: #7090d7;
     transform: scale(1.1);
 }
 .header_menu ul li a {
     height: 100%;
-    color: lightgray;
+    color: lightslategray;
     font-size: 18px;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -201,33 +256,39 @@ header {
     transform: scale(1.1);
 }
 .header_menu ul li:hover a {
-    color: #f4f4f4;
+    color: #6a89cc;
 }
 
 /* // 헤더 */
 
 /* 메인 */
 main {
-    padding: 20px;
+    /* padding: 20px; */
+    flex: 1;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 /* 트렌드 영화 슬라이드 관련 */
 .trends-movie-title {
     text-align: start;
-    font-size: 36px;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 700;
     color: #6a89cc;
-    margin-bottom: 10px;
-    margin-left: 60px;
 }
 
 #slide-box {
-    width: 1320px;
+    width: 1300px;
 
-    margin: auto;
+    /* margin: auto; */
     padding-top: 10px;
-    border: 10px solid #6a89cc;
+    /* border: 10px solid #6a89cc; */
 
-    background-color: #6a89cc;
+    /* background-color: #6a89cc; */
     border-radius: 10px;
     overflow: hidden;
 }
@@ -245,7 +306,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    color: lightgray;
+    color: slategray;
 }
 
 .slide-btns button {
@@ -254,7 +315,7 @@ main {
 
 #prevBtn:hover,
 #nextBtn:hover {
-    color: #f4f4f4;
+    color: #6a89cc;
 }
 
 .slide-indicators {
@@ -265,7 +326,7 @@ main {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: lightgray;
+    background-color: #6a89cc;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
@@ -321,6 +382,9 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+
+    border: 2px solid #6a89cc;
+    border-radius: 0 0 12px 12px;
 }
 
 .card-header {
@@ -369,8 +433,13 @@ main {
     font-size: 14px;
     font-weight: 500;
     color: #6a89cc;
-
-    border-bottom: 2px solid #6a89cc;
+    border-right: 2px solid #6a89cc;
+}
+.card-date .card-span {
+    padding-right: 4px;
+}
+.card-desc .card-span {
+    padding-right: 14px;
 }
 
 .card-desc {
@@ -385,9 +454,6 @@ main {
     overflow: hidden;
     text-wrap: wrap;
     text-overflow: ellipsis;
-}
-.card-desc .card-span {
-    margin-right: 10px;
 }
 /* // 트렌드 영화 슬라이드 관련 */
 
@@ -451,7 +517,7 @@ main {
     background: #fff;
     border: 4px solid #6a89cc;
     border-radius: 12px;
-    min-width: 300px;    /* 원하는 고정 너비 */
+    min-width: 300px; /* 원하는 고정 너비 */
     aspect-ratio: 1/1.65; /* 비율 유지 */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -466,7 +532,7 @@ main {
 #movie-modal .modal-poster img {
     width: 100%;
     height: 100%;
-    object-fit: cover;    /* 비율 유지하며 꽉 채우기, 잘릴 수 있음 */
+    object-fit: cover; /* 비율 유지하며 꽉 채우기, 잘릴 수 있음 */
     object-position: center;
     display: block;
 }
@@ -479,6 +545,7 @@ main {
     background-color: #6a89cc;
     color: lightgray;
     text-align: center;
+    opacity: 0.9;
 }
 #movie-modal .modal-poster .modal-link:hover {
     color: #f4f4f4;
@@ -509,6 +576,15 @@ main {
     margin-bottom: 10px;
 }
 
+#movie-modal .modal-content .modal-overview {
+    background-color: #f4f4f4;
+    border: 2px solid #6a89cc;
+    border-radius: 10px;
+    color: #333;
+    padding: 6px 10px;
+    font-size: 18px;
+}
+
 #movie-modal .modal-content .modal-rating {
     width: fit-content;
 
@@ -525,7 +601,5 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
     width: 100%;
-    bottom: 0;
 }
